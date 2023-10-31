@@ -1,0 +1,6 @@
+GH ! _Grasshopper
+MW ! _Join _AlignMeshVertices _DistanceToAdjust=0.01 _EnterEnd _SelPrev _Weld 180 _Enter _SelPrev _UnifyMeshNormals
+CB _NoEcho !_SelNone _ClippingPlane 0,0,0 1,1,0 _SelLast -_Rotate3D .5,.5,0 1,.5,0 _Copy=_No 180 _Enter -_SetObjectName _AppendCounter=_No "ClippingBox" -_Rotate3D .5,.5,.5 1,.5,.5 _Copy=_Yes 180 _Enter _SelLast -_SetObjectName _AppendCounter=_No "ClippingBox" -_Rotate3D .5,.5,.5 1,.5,.5 _Copy=_Yes 90 _Enter _SelLast -_SetObjectName _AppendCounter=_No "ClippingBox" -_Rotate3D .5,.5,0 .5,.5,1 _Copy=_Yes 90 180 270 _Enter _SelLast -_SetObjectName _AppendCounter=_No "ClippingBox" -_SelName "ClippingBox" -_SetObjectName _AppendCounter=_No "" _Group _SelNone _EnterEnd
+MB '_MeshBox X 1 Y 1 Z 1 0,0,0 1 1 1
+M4 '_3DFace 0,0,0 1,0,0 1,1,0 0,1,0 _Enter _Enter
+MBS '_MeshBox X 1 Y 1 Z 1 0,0,0 1 1 1 _SelLast _Scale 0,0,0 _Pause
