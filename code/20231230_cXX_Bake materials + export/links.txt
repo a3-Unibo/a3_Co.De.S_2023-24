@@ -1,0 +1,61 @@
+RECORDINGS
+cXX-00_Rhino Materials Overview
+https://unibo.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=611db8de-91d8-40d1-8178-b0e9011aad78
+
+CXX-01_Bake with materials from GH
+https://unibo.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=15ef1d81-1f68-4b61-848a-b0e90121e8cb
+
+CXX-02_Rhino to Modelo
+https://unibo.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=42c0a31f-a3f8-45b9-a851-b0eb00c474f7
+
+CXX-03_Render with Enscape
+https://unibo.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=42c0a31f-a3f8-45b9-a851-b0eb00c474f7
+
+
+
+PBR MATERIALS WEBSITES
+https://ambientcg.com/
+https://polyhaven.com/
+https://texturebox.com/ (not all are free)
+
+
+MATERIALS
+
+Concrete
+https://ambientcg.com/view?id=Concrete028
+https://polyhaven.com/a/concrete_wall_007
+
+Wood
+https://ambientcg.com/view?id=Planks033B
+https://polyhaven.com/a/laminate_floor_02
+
+
+ENVIRONMENTS
+https://ambientcg.com/view?id=DaySkyHDRI026A
+
+Convert .exr to .hdr
+https://convertio.co/exr-hdr/
+
+
+MODELO
+https://modelo.io/
+
+Mesh model
+- with materials
+https://app.modelo.io/share-token/1742114244116635648?source=copylink
+
+- monomaterial
+https://app.modelo.io/share-token/1742113955007455232?source=copylink
+
+
+ENSCAPE
+https://enscape3d.com/
+
+System requirements (Windows)
+https://learn.enscape3d.com/blog/knowledgebase/system-requirements/
+
+Performance considerations
+https://learn.enscape3d.com/blog/knowledgebase/performance-considerations/
+
+3DVR Enscape view
+https://api2.enscape3d.com/v3/view/280f6dc3-2245-49f4-9346-36629129a095
