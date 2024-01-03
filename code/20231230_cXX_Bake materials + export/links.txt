@@ -1,5 +1,5 @@
 RECORDINGS
-cXX-00_Rhino Materials Overview
+CXX-00_Rhino Materials Overview
 https://unibo.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=611db8de-91d8-40d1-8178-b0e9011aad78
 
 CXX-01_Bake with materials from GH
