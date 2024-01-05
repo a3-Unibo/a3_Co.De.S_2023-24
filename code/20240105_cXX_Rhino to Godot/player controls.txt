@@ -1,0 +1,7 @@
+- `A, W, S, D` - move left, forwards, backwards, right
+- `Mouse` - look around & in the direction of movement
+- `SHIFT`: run
+- `CTRL`: sprint!!
+- `SPACEBAR`: jump
+- `R` - respawn at the starting position
+- `ESC` - exit (game & Godot Editor)

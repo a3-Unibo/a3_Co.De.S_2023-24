@@ -1,0 +1,8 @@
+Godot Engine
+https://godotengine.org
+
+Rhino-Assembler to Godot, step by step
+https://ale2x72.notion.site/Assembler-to-Godot-d6ad816baecf4c4f99f9277ae74421c5?pvs=4
+
+Godot Compiled test
+https://drive.google.com/file/d/1K-NFqHI-CDYtgyNY5l6w6edhF6Vt5GXR/view?usp=sharing
