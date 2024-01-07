@@ -1,0 +1,3 @@
+Loading screen made using KenneyNL Godot SpashScreens
+
+https://github.com/KenneyNL/Godot-SplashScreens

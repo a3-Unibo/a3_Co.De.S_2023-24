@@ -1,7 +1,10 @@
 - `A, W, S, D` - move left, forwards, backwards, right
 - `Mouse` - look around & in the direction of movement
 - `SHIFT`: run
-- `CTRL`: sprint!!
+- `CTRL`: sprint!
 - `SPACEBAR`: jump
 - `R` - respawn at the starting position
+- `C` - switch camera (3rd person <-> 1st person)
+- `M` - toggle mouse arrow visibility
+- `X` - save screenshot (to a screenshots subfolder)
 - `ESC` - exit (game & Godot Editor)
