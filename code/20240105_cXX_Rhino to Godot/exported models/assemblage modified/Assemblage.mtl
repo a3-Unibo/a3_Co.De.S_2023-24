@@ -1,0 +1,32 @@
+# Rhino
+newmtl concrete
+Ka 0.0000 0.0000 0.0000
+Kd 0.9804 0.9804 0.9804
+Ks 0.8000 0.8000 0.8000
+Tf 0.0000 0.0000 0.0000
+d 1.0000
+Ns 204.0000
+map_Kd concrete_wall_007_diff_1k.jpg
+map_Bump concrete_wall_007_nor_dx_1k.exr
+newmtl Type 1 H
+Ka 0.0000 0.0000 0.0000
+Kd 0.7490 0.2471 0.2471
+Ks 1.0000 1.0000 1.0000
+Tf 0.0000 0.0000 0.0000
+d 1.0000
+Ns 5.3497
+newmtl Wood floor light
+Ka 0.0000 0.0000 0.0000
+Kd 1.0000 1.0000 1.0000
+Ks 1.0000 1.0000 1.0000
+Tf 0.0000 0.0000 0.0000
+d 1.0000
+Ns 0.0000
+map_Kd Wood floor light_1000_DF.jpg
+newmtl Stairs
+Ka 0.0000 0.0000 0.0000
+Kd 0.2471 0.7490 0.7490
+Ks 1.0000 1.0000 1.0000
+Tf 0.0000 0.0000 0.0000
+d 1.0000
+Ns 38.7637
