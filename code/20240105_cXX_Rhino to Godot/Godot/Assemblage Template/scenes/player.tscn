@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://m261p6olggug"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_j57id"]
+[ext_resource type="Material" uid="uid://kdmbg7elniaq" path="res://Materials/Player.tres" id="2_vb8u7"]
+[ext_resource type="Texture2D" uid="uid://bfnnr6foyyoqf" path="res://Textures/_pointers/Arrow.png" id="3_ijqs3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a0kyt"]
+radius = 0.35
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hglhi"]
+material = ExtResource("2_vb8u7")
+radius = 0.35
+height = 1.8
+
+[sub_resource type="PrismMesh" id="PrismMesh_llt2v"]
+size = Vector3(0.1, 0.15, 0.1)
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_3l60v"]
+auto_exposure_enabled = true
+frustum_focal_length = 24.0
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_j57id")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_a0kyt")
+
+[node name="visuals" type="Node3D" parent="."]
+
+[node name="body" type="MeshInstance3D" parent="visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+layers = 4
+mesh = SubResource("CapsuleMesh_hglhi")
+
+[node name="nose" type="MeshInstance3D" parent="visuals"]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 1.4, -0.4)
+layers = 2
+mesh = SubResource("PrismMesh_llt2v")
+
+[node name="Sprite3D" type="Sprite3D" parent="visuals"]
+transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 1.5, 0)
+layers = 16
+texture = ExtResource("3_ijqs3")
+
+[node name="camera mount" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
+
+[node name="Camera3rdPerson" type="Camera3D" parent="camera mount"]
+transform = Transform3D(1, 0, 0, 0, 0.92388, 0.382684, 0, -0.382684, 0.92388, 0, 1.8, 3.1)
+cull_mask = 1048559
+attributes = SubResource("CameraAttributesPhysical_3l60v")
+
+[node name="Camera1stPerson" type="Camera3D" parent="camera mount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.2)
+cull_mask = 1048557
+attributes = SubResource("CameraAttributesPhysical_3l60v")
+
+[node name="StepRay" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.4)

@@ -1,0 +1,1 @@
+Il file .zip è stato sostituito dalla cartella Godot, dentro alla quale trovate il template per Godot "Assemblage Template"

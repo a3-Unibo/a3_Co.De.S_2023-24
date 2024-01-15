@@ -1,0 +1,118 @@
+[gd_scene load_steps=12 format=3 uid="uid://ca2tkf46w5tmq"]
+
+[ext_resource type="Script" path="res://scripts/Minimap.gd" id="2_v21dl"]
+[ext_resource type="Script" path="res://scripts/Help.gd" id="3_f5wvy"]
+[ext_resource type="PackedScene" uid="uid://c5g33ovh7gpry" path="res://scenes/sample_geometry.tscn" id="4_v11fm"]
+[ext_resource type="PackedScene" uid="uid://m261p6olggug" path="res://scenes/player.tscn" id="5_1p1cg"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_8i18g"]
+
+[sub_resource type="Sky" id="Sky_5xdsl"]
+sky_material = SubResource("PhysicalSkyMaterial_8i18g")
+process_mode = 3
+
+[sub_resource type="Environment" id="Environment_j6ep0"]
+background_mode = 2
+sky = SubResource("Sky_5xdsl")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+fog_enabled = true
+fog_density = 0.0005
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.003
+adjustment_enabled = true
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pldhd"]
+auto_exposure_enabled = true
+
+[sub_resource type="Environment" id="Environment_b1hd0"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+tonemap_mode = 2
+tonemap_white = 2.0
+
+[sub_resource type="SystemFont" id="SystemFont_gtw7g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_se5oc"]
+line_spacing = 5.0
+font = SubResource("SystemFont_gtw7g")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="main" type="Node3D"]
+
+[node name="Godot Environment" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Godot Environment"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_color = Color(0.996078, 0.984314, 0.964706, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Godot Environment"]
+environment = SubResource("Environment_j6ep0")
+camera_attributes = SubResource("CameraAttributesPhysical_pldhd")
+
+[node name="HUD" type="CanvasLayer" parent="Godot Environment"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Godot Environment/HUD"]
+custom_minimum_size = Vector2(400, 225)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_bottom = 225.0
+grow_horizontal = 0
+
+[node name="SubViewport" type="SubViewport" parent="Godot Environment/HUD/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(400, 225)
+render_target_update_mode = 4
+
+[node name="CameraMinimap" type="Camera3D" parent="Godot Environment/HUD/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+cull_mask = 1048569
+environment = SubResource("Environment_b1hd0")
+projection = 1
+size = 30.0
+far = 5.0
+script = ExtResource("2_v21dl")
+target = NodePath("../../../../../player")
+
+[node name="Help Text" type="Label" parent="Godot Environment/HUD"]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 536.0
+offset_bottom = 487.0
+text = "Controls:
+A, W, S, D - move left, forwards, backwards, right
+Mouse - look around & in the direction of movement
+SHIFT - run
+CTRL - sprint!
+SPACEBAR - jump
+R - respawn at the starting position
+C - switch camera (3rd person <-> 1st person)
+M - toggle minimap visibility
+P - toggle mouse arrow visibility
+X - save screenshot
+ESC - exit
+
+H - toggle this help text"
+label_settings = SubResource("LabelSettings_se5oc")
+script = ExtResource("3_f5wvy")
+
+[node name="player" parent="." instance=ExtResource("5_1p1cg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+sens_horizontal = 0.2
+sens_vertical = 0.2
+
+[node name="Sample (delete before import)" parent="." instance=ExtResource("4_v11fm")]
